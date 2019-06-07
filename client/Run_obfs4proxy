@@ -14,6 +14,6 @@ else
 fi
 echo "sudo route add -host YOUTOPENVPNIP $DEFAULTGW"
 ## Following command is dor mac only change it according to your operating system
-## For most linux change this command by sudo route add default gw $DEFAULTGW dev YOURINTERFACE
+## For most linux change this command by sudo route add -host YOUROPENVPNSERVERIP gw $DEFAULTGW dev YOURINTERFACE
 sudo route add -host YOUROPENVPNIP $DEFAULTGW
 ./bin/ptproxy.py -c ./config/yourconfig.json
