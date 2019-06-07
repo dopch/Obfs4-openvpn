@@ -1,0 +1,4 @@
+#!/bin/sh
+cd $(dirname $0)
+python3 get-pip.py
+pip3 install -r ../bin/requirements.txt

@@ -1,0 +1,11 @@
+{
+    "role": "local",
+    "state": ".",
+    "local": "127.0.0.1:6080",
+    "server": "YOUROUPENVPNIP:80",
+    "ptexec": "obfs4proxy -logLevel=ERROR -enableLogging=true",
+    "ptname": "obfs4",
+    "ptargs": "cert=CERT IS GIVEN ON SERVER SIDE USE systemctl status obfs4proxy.service or journalctl -u obfs4proxy.service;iat-mode=0",
+    "ptserveropt": "",
+    "ptproxy": ""
+}

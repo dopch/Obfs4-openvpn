@@ -1,0 +1,19 @@
+#!/bin/sh
+cd $(dirname $0)
+OBFSBIN=/usr/local/bin/obfs4proxy
+## Defaultgw command below is for mac only change it according to your operating system
+## For most linux DEFAULTGW=$(route -n | awk 'NR==3 {print $2}')
+DEFAULTGW=$(netstat -nr | grep default | awk 'NR==1 {print $2}')
+if [ -f "$OBFSBIN" ]; then
+    echo ""
+    echo "" > ./obfs4proxy.log
+    echo "$OBFSBIN exist"
+else 
+    echo "$OBFSBIN does not exist"
+    sudo cp ./bin/obfs4proxy /usr/local/bin/obfs4proxy
+fi
+echo "sudo route add -host YOUTOPENVPNIP $DEFAULTGW"
+## Following command is dor mac only change it according to your operating system
+## For most linux change this command by sudo route add default gw $DEFAULTGW dev YOURINTERFACE
+sudo route add -host YOUROPENVPNIP $DEFAULTGW
+./bin/ptproxy.py -c ./config/yourconfig.json
