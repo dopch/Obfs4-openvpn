@@ -125,7 +125,7 @@ redirect-gateway def1
 
 ### Step1
 
-Run Run_obsf4proxy or ./bin/ptproxy.py -c ./config/YOURCONFIG.json
+Run Run_obsf4proxy or ./bin/ptproxy.py -c ./config/YOURCONFIG.json (sudo required for linux)
 
 ### Step2
 
